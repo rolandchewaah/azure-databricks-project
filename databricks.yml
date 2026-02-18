@@ -1,0 +1,17 @@
+bundle:
+  name: bundlesDevOpsDemo
+
+include:
+  - resources/*.yml
+targets:
+  dev:
+    default: true
+    workspace:
+      host: https://adb-8876629969026717.17.azuredatabricks.net/
+      root_path: /Workspace/Users/alfeu.duran@databricks.com/Projects/${bundle.name}/${bundle.target}
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-3457621802558823.3.azuredatabricks.net/
+      root_path: /Workspace/Users/alfeu.duran@databricks.com/Projects/${bundle.name}/${bundle.target}
+    
